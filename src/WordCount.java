@@ -44,6 +44,6 @@ class WordCount
     	
     	//records words and their count into the file
     	for(String str : listOfWords)
-    		output.printf("%-13s %s\n", str, dictionary.get(str));		
+    		output.printf("%s\t%s\n", str, dictionary.get(str));		
 	}
 }
