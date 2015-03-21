@@ -40,10 +40,10 @@ class WordCount
 				
 		//sorts the list of words in alphabetical order
 		List<String> listOfWords = new ArrayList<String>(dictionary.keySet());
-    		Collections.sort(listOfWords);
+	    	Collections.sort(listOfWords);
     	
-    	//records words and their count into the file
-    	for(String str : listOfWords)
-    		output.printf("%s\t%s\n", str, dictionary.get(str));		
+	    	//records words and their count into the file
+	    	for(String str : listOfWords)
+	    		output.printf("%s\t%s\n", str, dictionary.get(str));		
 	}
 }
