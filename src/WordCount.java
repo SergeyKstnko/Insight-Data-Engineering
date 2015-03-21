@@ -29,7 +29,7 @@ class WordCount
 			while(content.hasNext()) {
 				String word = content.next();
 				word = word.toLowerCase();
-				word = word.replaceAll("[\\[\\]'|?:!.,;'']*([a-z]+)[\\[\\]?':!.,;'']*", "$1");
+				word = word.replaceAll("[\\[\\]|?:!.,;''-]*([a-z]+)[\\[\\]?:!.,;''-]*", "$1");
 				if(word.charAt(0) >= 'a' && word.charAt(0) <= 'z'){					
 					if (dictionary.containsKey(word))
 						dictionary.put(word, (dictionary.get(word)+1));
