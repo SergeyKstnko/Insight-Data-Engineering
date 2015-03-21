@@ -1,17 +1,17 @@
-//wordCount.java
+//WordCount.java
 
 /**
 *This program reads content from all the files in the specified directory.
 *Calculates amount of unique words and outputs the list of words and
 *their count into the specified file.
 *
-*@author Sergii Kostenko
+*@author Sergey Kostenko
 *@version 3/19/15
 **/
 import java.util.*;
 import java.io.*;
 
-class wordCount
+class WordCount
 {
 	static final String PATH = "../wc_input";
 	static final String OUTPUTFILE = "../wc_output/wc_result.txt";
@@ -20,8 +20,8 @@ class wordCount
 		throws FileNotFoundException {
 		
 		File f = new File(PATH);
-		PrintStream output = new PrintStream(new File(OUTPUTFILE));
 		Hashtable<String, Integer> dictionary = new Hashtable<String, Integer>();
+		PrintStream output = new PrintStream(new File(OUTPUTFILE));
 
 		for(File subF: f.listFiles()) {
 			Scanner content = new Scanner(subF);
@@ -39,11 +39,11 @@ class wordCount
 		}
 				
 		//sorts the list of words in alphabetical order
-		List<String> v = new ArrayList<String>(dictionary.keySet());
-    	Collections.sort(v);
+		List<String> listOfWords = new ArrayList<String>(dictionary.keySet());
+    		Collections.sort(listOfWords);
     	
     	//records words and their count into the file
-    	for (String str : v)
+    	for(String str : listOfWords)
     		output.printf("%-13s %s\n", str, dictionary.get(str));		
 	}
 }
